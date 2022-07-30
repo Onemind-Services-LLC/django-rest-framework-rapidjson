@@ -11,9 +11,8 @@ changes = os.path.join(here, 'CHANGES.rst')
 match = r'^#*\s*(?P<version>[0-9]+\.[0-9]+(\.[0-9]+)?)$'
 with codecs.open(changes, encoding='utf-8') as changes:
     for line in changes:
-        res = re.match(match, line)
-        if res:
-            version = res.group('version')
+        if res := re.match(match, line):
+            version = res['version']
             break
 
 # Get the long description

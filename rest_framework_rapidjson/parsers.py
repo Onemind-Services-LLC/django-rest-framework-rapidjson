@@ -29,4 +29,4 @@ class RapidJSONParser(BaseParser):
                 uuid_mode=UM_CANONICAL, number_mode=NM_DECIMAL
             )
         except ValueError as exc:
-            raise ParseError('JSON parse error - %s' % six.text_type(exc))
+            raise ParseError(f'JSON parse error - {six.text_type(exc)}')
